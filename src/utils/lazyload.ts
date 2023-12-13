@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-export const lazyLoadWithDelay = (modulePath: string, componentName: string, delay = 1000) =>
+export const lazyLoadWithDelay = (modulePath: string, componentName: string, delay = 500) =>
   lazy(
     () =>
       new Promise<any>((resolve) =>

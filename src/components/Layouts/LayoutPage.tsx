@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback } from "react";
-import { FooterWithLogo, NavbarLayouts, SpeedDialButton } from "..";
+import { NavbarLayouts, SpeedDialButton } from "..";
 import RightSidebar from "../Sidebar/RightSidebar";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 
@@ -23,13 +23,16 @@ export default function LayoutPage({ children }: { children: ReactNode }) {
   }, [setWindowDimensions]);
 
   return (
-    <React.Fragment>
+    <div className="scroll">
       <NavbarLayouts />
-      <div className="h-24">toolbar</div>
-      <RightSidebar />
-      {children}
-      {screenSize && (screenSize as number) >= 960 && <SpeedDialButton />}
-      <FooterWithLogo />
-    </React.Fragment>
+      <div className=" h-20 lg:h-24 dark:bg-main-dark-bg">toolbar</div>
+      <div className="scrollable-content">
+        <RightSidebar />
+        <div className="dark:bg-main-bure-text">
+          {children}
+          {screenSize && (screenSize as number) >= 960 && <SpeedDialButton />}
+        </div>
+      </div>
+    </div>
   );
 }

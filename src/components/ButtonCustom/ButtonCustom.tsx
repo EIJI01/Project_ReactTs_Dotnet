@@ -41,7 +41,7 @@ const ButtonCustom = ({
           ? sizeXl
           : sizeSm
       } transform hover:scale-105 transition-transform duration-300 ${
-        color ? "text-main-dark-text" : "text-main-bure-text"
+        color && variant === "gradient" ? "text-main-dark-text" : "text-main-bure-text"
       }`}
       onClick={onClick}
       style={{

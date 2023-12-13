@@ -47,7 +47,7 @@ module.exports = withMT({
         1: "1px",
       },
       borderColor: {
-        color: "", //rgba(0,0,0,0.1);
+        "main-dark": "#212121", //rgba(0,0,0,0.1);
       },
       width: {
         400: "400px",
@@ -60,6 +60,7 @@ module.exports = withMT({
       },
       height: {
         80: "80px",
+        460: "460px",
       },
       minHeight: {
         590: "590px",

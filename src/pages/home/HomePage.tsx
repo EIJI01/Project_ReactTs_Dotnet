@@ -1,3 +1,4 @@
+import { FooterWithLogo } from "../../components";
 import { UseUserContext } from "../../contexts/ContextProvider";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 
@@ -7,6 +8,7 @@ export default function HomePage({}: Props) {
   const { setModes, currentMode, isOpenThemeSettings, setIsSettings, currentColor } =
     useStateDispatchContext();
   const { currentUser } = UseUserContext();
+
   return (
     <>
       <div>{currentMode.modes}</div>
@@ -22,6 +24,7 @@ export default function HomePage({}: Props) {
       </div>
       <div>{currentUser ? currentUser.name : null}</div>
       <div className={`bg-[${currentColor}]`}>{currentColor}</div>
+      <FooterWithLogo />
     </>
   );
 }

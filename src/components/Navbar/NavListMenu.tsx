@@ -15,6 +15,8 @@ export const NavListMenu = memo((): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const { currentLanguage, setOpenNav } = useStateDispatchContext();
+  const { currentColor, currentMode } = useStateDispatchContext();
+  document.documentElement.style.setProperty("--service", currentColor);
   return (
     <React.Fragment>
       <Menu
@@ -27,8 +29,9 @@ export const NavListMenu = memo((): JSX.Element => {
         <MenuHandler>
           <Typography placeholder="" as="div" variant="small" className="font-medium">
             <ListItem
+              id="service"
               placeholder=""
-              className="flex items-center gap-2 py-2 pr-4 font-medium text-main-text dark:text-main-dark-text dark:hover:text-main-text"
+              className="flex items-center gap-2 py-2 pr-4 font-medium dark:bg-main-dark-bg"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
@@ -48,7 +51,12 @@ export const NavListMenu = memo((): JSX.Element => {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList placeholder="" className="hidden max-w-screen-xl rounded-xl lg:block">
+        <MenuList
+          placeholder=""
+          className={`hidden max-w-screen-xl rounded-xl lg:block ${
+            currentMode.modes === "Dark" ? "bg-main-dark-bg border-gray-700" : ""
+          }`}
+        >
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
             <NavItem />
           </ul>

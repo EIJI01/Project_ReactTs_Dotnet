@@ -15,6 +15,8 @@ import { UseUserContext } from "../../contexts/ContextProvider";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 import { memo, useState } from "react";
 import ButtonCustom from "../ButtonCustom/ButtonCustom";
+import { Tooltip } from "@material-tailwind/react";
+import logo from "../../assets/logo-boardgame.png";
 
 const NavbarLayouts = memo((): JSX.Element => {
   const [menuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -26,19 +28,23 @@ const NavbarLayouts = memo((): JSX.Element => {
   return (
     <Navbar
       placeholder=""
-      className="mx-auto max-w-screen-bestLarg px-10 py-5 dark:bg-main-dark-bg fixed z-40"
+      className="mx-auto max-w-screen-bestLarg px-10 py-5 dark:bg-main-dark-bg fixed z-40 overflow-hidden dark:border-main-dark"
       fullWidth
     >
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-          placeholder=""
-          as="a"
-          href="#"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5 lg:ml-2 dark:text-main-dark-text"
-        >
-          Material Tailwind
-        </Typography>
+        <div className="lg:ml-2 mr-4">
+          <div className="bg-white rounded-lg w-fit mx-auto">
+            <img src={logo} alt="" className="w-auto h-8 dark:lg-max:h-10" />
+          </div>
+          <Typography
+            placeholder=""
+            as="a"
+            href="#"
+            className=" cursor-pointer lg:text-[12px] font-semibold  dark:text-main-dark-text dark:lg-max:hidden"
+          >
+            Boardgame Everyday
+          </Typography>
+        </div>
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -53,42 +59,44 @@ const NavbarLayouts = memo((): JSX.Element => {
             >
               <MenuHandler>
                 <Typography placeholder="" as="div" variant="small" className="font-medium">
-                  <ListItem
-                    placeholder=""
-                    className="flex items-center gap-2 py-2 pr-4 font-medium text-main-text"
-                    selected={false}
-                    onClick={() => setIsMenuOpen((prev) => !prev)}
-                    style={{ backgroundColor: currentColor }}
-                  >
-                    <Avatar
+                  <Tooltip content={"profile"} placement="bottom">
+                    <ListItem
                       placeholder=""
-                      size="sm"
-                      alt="avatar"
-                      src={currentUser.image}
-                      className="border mr-2"
-                      style={{ border: `4px solid ${currentColor}` }}
-                    />
-
-                    <Typography
-                      placeholder={``}
-                      className={`${
-                        currentColor ? "text-main-dark-text text-sm" : "text-main-bure-text"
-                      } dark:text-main-dark-text text-sm`}
+                      className="flex items-center gap-2 py-1 pr-4 font-medium text-main-text"
+                      selected={false}
+                      onClick={() => setIsMenuOpen((prev) => !prev)}
+                      style={{ backgroundColor: currentColor }}
                     >
-                      {currentLanguage.languages === "Thai" ? (
-                        <span className="text-md font-semibold">สวัสดี</span>
-                      ) : (
-                        <span className="text-md font-semibold">Hi,</span>
-                      )}{" "}
-                      {currentUser.name}
-                    </Typography>
-                    <ChevronDownIcon
-                      strokeWidth={2.5}
-                      className={`hidden h-3 w-3 transition-transform lg:block ${
-                        currentColor ? "text-main-dark-text text-sm" : "text-main-bure-text"
-                      } dark:text-main-dark-text ${menuOpen ? "rotate-180" : ""}`}
-                    />
-                  </ListItem>
+                      <Avatar
+                        placeholder=""
+                        size="sm"
+                        alt="avatar"
+                        src={currentUser.image}
+                        className="  "
+                        style={{ border: `2px solid white` }}
+                      />
+
+                      <Typography
+                        placeholder={``}
+                        className={`${
+                          currentColor ? "text-main-dark-text text-sm" : "text-main-bure-text"
+                        } dark:text-main-dark-text text-sm`}
+                      >
+                        {currentLanguage.languages === "Thai" ? (
+                          <span className="text-md font-semibold">สวัสดี</span>
+                        ) : (
+                          <span className="text-md font-semibold">Hi,</span>
+                        )}{" "}
+                        {currentUser.name}
+                      </Typography>
+                      <ChevronDownIcon
+                        strokeWidth={2.5}
+                        className={`hidden h-3 w-3 transition-transform lg:block ${
+                          currentColor ? "text-main-dark-text text-sm" : "text-main-bure-text"
+                        } dark:text-main-dark-text ${menuOpen ? "rotate-180" : ""}`}
+                      />
+                    </ListItem>
+                  </Tooltip>
                 </Typography>
               </MenuHandler>
             </Menu>

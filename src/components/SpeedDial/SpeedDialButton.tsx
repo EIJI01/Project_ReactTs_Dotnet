@@ -29,7 +29,7 @@ const SpeedDialButton = memo(() => {
           <SpeedDialContent placeholder="">
             <SpeedDialAction
               placeholder=""
-              className={`relative text-white`}
+              className={`relative text-white dark:border-0`}
               style={{ backgroundColor: currentColor }}
             >
               <HomeIcon className="h-5 w-5" />
@@ -37,14 +37,14 @@ const SpeedDialButton = memo(() => {
                 placeholder=""
                 variant="small"
                 color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-normal"
+                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
               >
                 Home
               </Typography>
             </SpeedDialAction>
             <SpeedDialAction
               placeholder=""
-              className={`relative text-white`}
+              className={`relative text-white dark:border-0`}
               onClick={() => setIsSettings(true)}
               style={{ backgroundColor: currentColor }}
             >
@@ -53,14 +53,14 @@ const SpeedDialButton = memo(() => {
                 placeholder=""
                 variant="small"
                 color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-normal"
+                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
               >
                 Settings
               </Typography>
             </SpeedDialAction>
             <SpeedDialAction
               placeholder=""
-              className={`relative text-white`}
+              className={`relative text-white dark:border-0`}
               style={{ backgroundColor: currentColor }}
             >
               <Square3Stack3DIcon className="h-5 w-5" />
@@ -68,7 +68,7 @@ const SpeedDialButton = memo(() => {
                 placeholder=""
                 variant="small"
                 color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-normal"
+                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
               >
                 Pages
               </Typography>

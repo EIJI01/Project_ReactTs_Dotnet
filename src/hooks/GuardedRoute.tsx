@@ -6,10 +6,11 @@ import { protectedRoute } from "../utils/routing";
 import { navListMenuItemsGm, navListMenuItemsMember } from "../data/nav-data";
 
 export const GuardedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { pathname } = useLocation();
   const [isNotAccessRoute, setIsNotAccessRoute] = useState<boolean>(false);
+  const { pathname } = useLocation();
   const { currentUser } = UseUserContext();
   const navigate = useNavigate();
+  console.log(isNotAccessRoute);
   useEffect(() => {
     const memberIsNotAccess =
       (!currentUser || currentUser.role == Role.MEMBER) &&

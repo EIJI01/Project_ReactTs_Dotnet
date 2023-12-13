@@ -7,6 +7,8 @@
   --spinner-color: #03c9d7;
   --hover-footer: #03c9d7;
   --nav-mid: #03c9d7;
+  --body-color: #ffff;
+  --service: #ffff;
 }
 
 #my-element:hover {
@@ -24,13 +26,40 @@
 .nav-mid:hover {
   background-color: var(--nav-mid);
 }
+#service {
+  color: var(--service);
+}
+#service:hover {
+  background-color: var(--service);
+  color: white;
+}
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  /* display: none; */
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(216, 216, 216);
+  background-color: rgba(130, 128, 128, 0.279);
   border-radius: 40px;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+/* .scrollable-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 24px);
+} */
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+body::-webkit-scrollbar {
+  overflow-y: auto;
+  max-height: calc(100vh - 24px);
+}
+body {
+  background-color: var(--body-color);
+  height: 100vh;
+}
+
+#list-mid {
+  background-color: aqua;
 }

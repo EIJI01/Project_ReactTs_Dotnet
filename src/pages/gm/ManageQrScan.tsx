@@ -1,5 +1,11 @@
+import { ManageQrScanComp } from "../../components";
+
 const ManageQrScan = () => {
-  return <div>ManageQrScan</div>;
+  return (
+    <div>
+      <ManageQrScanComp />
+    </div>
+  );
 };
 
 export default ManageQrScan;

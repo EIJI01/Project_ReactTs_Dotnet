@@ -1,5 +1,11 @@
+import { ManageQueueTable } from "../../components";
+
 const ManageQueue = () => {
-  return <div>ManageQueue</div>;
+  return (
+    <div>
+      <ManageQueueTable />
+    </div>
+  );
 };
 
 export default ManageQueue;

@@ -17,13 +17,14 @@ export const NavList = memo((): JSX.Element => {
         href="#"
         variant="small"
         color="blue-gray"
-        className={`font-medium `}
+        className={`font-medium`}
         onClick={() => {
           setOpenNav(false);
           navigate("/");
         }}
       >
         <ListItem
+          id="my-element"
           placeholder=""
           className="flex items-center gap-2 py-2 pr-4 dark:text-main-dark-text dark:hover:text-main-text"
         >
@@ -44,6 +45,7 @@ export const NavList = memo((): JSX.Element => {
       >
         <ListItem
           placeholder=""
+          id="my-element"
           className="flex items-center gap-2 py-2 pr-4 dark:text-main-dark-text dark:hover:text-main-text"
         >
           {currentLanguage.languages === "Thai" ? "ติดต่อเรา" : "About us"}
