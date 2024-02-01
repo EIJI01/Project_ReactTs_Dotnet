@@ -1,40 +1,37 @@
-import { UserPlusIcon } from "@heroicons/react/20/solid";
 import { CardHeader, Typography } from "@material-tailwind/react";
-import { ButtonCustom } from "..";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 
-type Props = {};
+interface Props {
+  title: string;
+  subTitle?: string;
+  buttonBody?: JSX.Element;
+}
 
-const DataGridHeader = ({}: Props) => {
+const DataGridHeader = ({ title, subTitle, buttonBody }: Props) => {
   const { currentColor } = useStateDispatchContext();
   return (
     <CardHeader
       placeholder=""
       floated={false}
       shadow={false}
-      className="rounded-none mb-4 bg-inherit"
+      className="rounded-none mb-4 bg-inherit lg:mx-4 mx-2 overflow-visible"
     >
       <div className="flex items-center justify-between gap-8 relative">
         <div>
           <Typography placeholder="" variant="h5" color="blue-gray" style={{ color: currentColor }}>
-            Members list
+            {title}
           </Typography>
-          <Typography placeholder="" color="gray" className="mt-1 font-normal">
-            See information about all members
-          </Typography>
+          {subTitle && (
+            <Typography
+              placeholder=""
+              color="gray"
+              className="mt-1 font-normal dark:text-main-dark-text"
+            >
+              {subTitle}
+            </Typography>
+          )}
         </div>
-        <div className="flex shrink-0 flex-col gap-2 sm:flex-row ">
-          <ButtonCustom variant="outlined" size="sm" className="dark:text-main-dark-text">
-            view all
-          </ButtonCustom>
-          <ButtonCustom
-            className="flex items-center gap-3 text-main-dark-text"
-            size="sm"
-            color={currentColor}
-          >
-            <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> Add member
-          </ButtonCustom>
-        </div>
+        <div>{buttonBody}</div>
       </div>
     </CardHeader>
   );

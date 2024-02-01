@@ -1,9 +1,9 @@
-import { ManageQueueTable } from "../../components";
+import { Outlet } from "react-router-dom";
 
 const ManageQueue = () => {
   return (
     <div>
-      <ManageQueueTable />
+      <Outlet />
     </div>
   );
 };

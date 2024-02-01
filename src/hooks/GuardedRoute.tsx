@@ -3,7 +3,12 @@ import { UseUserContext } from "../contexts/ContextProvider";
 import { Role } from "../models/value-type/enum-type";
 import { useLocation, useNavigate } from "react-router-dom";
 import { protectedRoute } from "../utils/routing";
-import { navListMenuItemsGm, navListMenuItemsMember } from "../data/nav-data";
+import {
+  gmProfile,
+  memberProfile,
+  navListMenuItemsGm,
+  navListMenuItemsMember,
+} from "../data/nav-data";
 
 export const GuardedRoute = ({ children }: { children: React.ReactNode }) => {
   const [isNotAccessRoute, setIsNotAccessRoute] = useState<boolean>(false);
@@ -14,13 +19,14 @@ export const GuardedRoute = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const memberIsNotAccess =
       (!currentUser || currentUser.role == Role.MEMBER) &&
-      protectedRoute(navListMenuItemsGm).includes(pathname);
+      protectedRoute([...navListMenuItemsGm, gmProfile]).includes(pathname);
     const gmIsNotAccess =
-      protectedRoute(navListMenuItemsMember).includes(pathname) &&
+      protectedRoute([...navListMenuItemsMember, memberProfile]).includes(pathname) &&
       !!currentUser &&
       currentUser.role == Role.GM;
+    const nullUserNotAcess = !currentUser && protectedRoute([memberProfile]).includes(pathname);
     const checkPath = () => {
-      if (memberIsNotAccess || gmIsNotAccess) setIsNotAccessRoute(true);
+      if (memberIsNotAccess || gmIsNotAccess || nullUserNotAcess) setIsNotAccessRoute(true);
     };
     checkPath();
   }, [currentUser, pathname]);

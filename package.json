@@ -13,7 +13,13 @@
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.1.5",
     "@syncfusion/ej2-react-grids": "^23.2.7",
+    "@types/react-datepicker": "^4.19.5",
+    "date-fns": "^3.0.6",
+    "date-fns-tz": "^2.0.0",
+    "qr-scanner": "^1.4.2",
+    "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
+    "react-datepicker": "^4.25.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.20.1"

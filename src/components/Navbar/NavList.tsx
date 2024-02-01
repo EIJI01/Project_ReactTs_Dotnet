@@ -3,10 +3,13 @@ import { NavListMenu } from "./NavListMenu";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
+import { UseUserContext } from "../../contexts/ContextProvider";
+import { checkUser } from "../../utils/routing";
 
 export const NavList = memo((): JSX.Element => {
   const { currentLanguage, screenSize, setIsSettings, setOpenNav, currentColor } =
     useStateDispatchContext();
+  const { currentUser } = UseUserContext();
   const navigate = useNavigate();
   document.documentElement.style.setProperty("--nav-mid", currentColor);
   return (
@@ -53,24 +56,27 @@ export const NavList = memo((): JSX.Element => {
       </Typography>
       {screenSize <= 960 && (
         <>
-          <Typography
-            placeholder=""
-            as="a"
-            href="#"
-            variant="small"
-            color="blue-gray"
-            className="font-medium "
-            onClick={() => {
-              setOpenNav(false);
-            }}
-          >
-            <ListItem
+          {currentUser && !checkUser(currentUser.role) && (
+            <Typography
               placeholder=""
-              className="flex items-center gap-2 py-2 pr-4 dark:text-main-dark-text dark:hover:text-main-text"
+              as="a"
+              href="#"
+              variant="small"
+              color="blue-gray"
+              className="font-medium "
+              onClick={() => {
+                setOpenNav(false);
+                window.location.href = "/member/profile";
+              }}
             >
-              {currentLanguage.languages === "Thai" ? "โปรไฟล์" : "Profile"}
-            </ListItem>
-          </Typography>
+              <ListItem
+                placeholder=""
+                className="flex items-center gap-2 py-2 pr-4 dark:text-main-dark-text dark:hover:text-main-text"
+              >
+                {currentLanguage.languages === "Thai" ? "โปรไฟล์" : "Profile"}
+              </ListItem>
+            </Typography>
+          )}
 
           <Typography
             placeholder=""

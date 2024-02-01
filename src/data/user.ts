@@ -6,13 +6,14 @@ import profile2 from "../assets/avatar/avatar2.jpg";
 export const Member: User = {
   id: "112233",
   name: "chanyut",
-  username: "chan_aa",
+  username: "chan_aa@gmail.com",
   role: Role.MEMBER,
   image: profile1,
+  tel: "0982312164",
 };
 
 export const Gm: User = {
-  id: "112255",
+  id: "Gm112255",
   name: "Michel",
   username: "_michel2251",
   role: Role.GM,

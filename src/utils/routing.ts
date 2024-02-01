@@ -16,3 +16,20 @@ export const protectedRoute = (data: Array<any>): Array<string> => {
   });
   return path;
 };
+
+export const checkUser = (role: Role) => {
+  if (role === Role.GM) {
+    return "/gm/profile";
+  } else if (role === Role.MEMBER) {
+    return "/member/profile";
+  } else {
+    return "/notfound";
+  }
+};
+export const checkTypeUser = (role: Role) => {
+  if (role === Role.GM) {
+    return true;
+  } else {
+    return false;
+  }
+};

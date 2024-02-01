@@ -6,4 +6,5 @@ export interface User {
   username: string;
   role: Role;
   image: string;
+  tel?: string;
 }

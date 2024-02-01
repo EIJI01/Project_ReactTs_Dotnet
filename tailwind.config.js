@@ -60,10 +60,16 @@ module.exports = withMT({
       },
       height: {
         80: "80px",
-        460: "460px",
+        232: "232px",
+        460: "445px",
+        320: "320px",
       },
       minHeight: {
         590: "590px",
+      },
+      maxHeight: {
+        300: "312px",
+        460: "445px",
       },
     },
   },

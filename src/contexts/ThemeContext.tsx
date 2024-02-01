@@ -20,7 +20,7 @@ function initialStateInSession() {
   const colors = getSessionStorageItem<string>("currentColor");
   const modes = getSessionStorageItem<"Light" | "Dark">("modes");
   const languages = getSessionStorageItem<"English" | "Thai">("languages");
-  const color = !!colors ? colors : "#03C9D7";
+  const color = !!colors ? colors : "#8bc34a";
   const mode = !!modes ? modes : "Light";
   const language = !!languages ? languages : "English";
   return { color, mode, language };

@@ -1,5 +1,11 @@
+import { Outlet } from "react-router-dom";
+
 const ScanQrcode = (): JSX.Element => {
-  return <div>ScanQrcode</div>;
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
 };
 
 export default ScanQrcode;

@@ -6,3 +6,6 @@ export { default as CallingGm } from "./member/CallingGM";
 export { default as ScanQrcode } from "./member/ScanQrcode";
 export { default as ManageQueue } from "./gm/ManageQueue";
 export { default as ManageQrScan } from "./gm/ManageQrScan";
+export { default as ManageTable } from "./gm/ManageTable";
+export { default as GmProfile } from "./gm/GmProfile";
+export { default as MemberProfile } from "./member/MemberProfile";

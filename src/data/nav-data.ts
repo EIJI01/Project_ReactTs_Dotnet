@@ -1,9 +1,16 @@
-import { Bars4Icon, SquaresPlusIcon, SunIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import {
+  Bars4Icon,
+  SquaresPlusIcon,
+  UserGroupIcon,
+  PlusIcon,
+  QueueListIcon,
+  QrCodeIcon,
+} from "@heroicons/react/24/solid";
 export const navListMenuItemsMember = [
   {
-    title: "Booking",
+    title: "Reservation Queue",
     description: "Find the perfect solution for your needs.",
-    icon: SquaresPlusIcon,
+    icon: QueueListIcon,
     path: "/member/booking-queue",
   },
   {
@@ -13,66 +20,77 @@ export const navListMenuItemsMember = [
     path: "/member/calling-gm",
   },
   {
-    title: "Scan QR Code",
-    description: "Find the perfect solution for your needs.",
-    icon: Bars4Icon,
+    title: "Scan Qrcode",
+    description: "Meet and learn about our dedication",
+    icon: QrCodeIcon,
     path: "/member/scan-qr",
   },
   {
-    title: "Resr",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
+    title: "New Services",
+    description: "Soom.",
+    icon: PlusIcon,
     path: undefined,
   },
   {
-    title: "Services",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
+    title: "New Services",
+    description: "Soom.",
+    icon: PlusIcon,
     path: undefined,
   },
   {
-    title: "Services",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
+    title: "New Services",
+    description: "Soom.",
+    icon: PlusIcon,
     path: undefined,
   },
 ];
-
+export const memberProfile = {
+  title: "Member Profile",
+  description: "",
+  icon: "",
+  path: "/member/profile",
+};
+export const gmProfile = {
+  title: "Gm Profile",
+  description: "",
+  icon: "",
+  path: "/gm/profile",
+};
 export const navListMenuItemsGm = [
   {
-    title: "Manage Queue",
+    title: "Manage Cards",
     description: "Find the perfect solution for your needs.",
     icon: SquaresPlusIcon,
+    path: "/gm/manage-cards",
+  },
+  {
+    title: "Manage Queues",
+    description: "Meet and learn about our dedication",
+    icon: UserGroupIcon,
     path: "/gm/manage-queue",
   },
   {
-    title: "Manage Qr Code",
-    description: "Meet and learn about our dedication",
-    icon: UserGroupIcon,
-    path: "/gm/manage-qrscan",
-  },
-  {
-    title: "Scan QR Code",
+    title: "Manage Table",
     description: "Find the perfect solution for your needs.",
     icon: Bars4Icon,
+    path: "/gm/manage-table",
+  },
+  {
+    title: "New Services",
+    description: "Soon.",
+    icon: PlusIcon,
     path: undefined,
   },
   {
-    title: "Resr",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
+    title: "New Services",
+    description: "Soon.",
+    icon: PlusIcon,
     path: undefined,
   },
   {
-    title: "Services",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
-    path: undefined,
-  },
-  {
-    title: "Services",
-    description: "Learn how we can help you achieve your goals.",
-    icon: SunIcon,
+    title: "New Services",
+    description: "Soon.",
+    icon: PlusIcon,
     path: undefined,
   },
 ];

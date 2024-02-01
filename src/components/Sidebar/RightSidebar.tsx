@@ -22,20 +22,21 @@ const RightSidebar = memo(() => {
       onClose={() => setIsSettings(false)}
       placement="right"
       size={320}
+      className="dark:bg-main-bure-text"
     >
       <div className="flex justify-between items-center p-4 ml-4">
-        <p className="font-semibold text-xl">Settings</p>
+        <p className="font-semibold text-xl dark:text-main-dark-text">Settings</p>
         <button
           type="button"
           onClick={() => setIsSettings(false)}
           style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
-          className="text-2xl p-3 hover:drop-shadow-xl hover:bg-gray-200"
+          className="text-2xl p-3 hover:drop-shadow-xl hover:bg-gray-200 hover:dark:bg-gray-700"
         >
           <MdOutlineCancel />
         </button>
       </div>
       <div className="flex-col border-t-1 border-color p-4 ml-4">
-        <p className="font-semibold text-lg">Theme Options</p>
+        <p className="font-semibold text-lg dark:text-main-dark-text">Theme Options</p>
         <div className="mt-4">
           <input
             type="radio"
@@ -49,7 +50,7 @@ const RightSidebar = memo(() => {
             }}
             checked={currentMode.modes === "Light"}
           />
-          <label htmlFor="light" className="ml-2 text-sm cursor-pointer">
+          <label htmlFor="light" className="ml-2 text-sm cursor-pointer dark:text-main-dark-text">
             Light
           </label>
         </div>
@@ -66,13 +67,13 @@ const RightSidebar = memo(() => {
             }}
             checked={currentMode.modes === "Dark"}
           />
-          <label htmlFor="dark" className="ml-2 text-sm cursor-pointer">
+          <label htmlFor="dark" className="ml-2 text-sm cursor-pointer dark:text-main-dark-text">
             Dark
           </label>
         </div>
       </div>
       <div className="flex-col border-t-1 border-color p-4 ml-4">
-        <p className="font-semibold text-lg">Theme Colors</p>
+        <p className="font-semibold text-lg dark:text-main-dark-text">Theme Colors</p>
         <div className={`flex gap-1 flex-wrap`}>
           {themeColors.map((item, index) => (
             <Tooltip key={index} content={item.name} placement="bottom">
@@ -98,13 +99,14 @@ const RightSidebar = memo(() => {
         </div>
       </div>
       <div className="flex-col border-t-1 border-color p-4 ml-4">
-        <p className="font-semibold text-lg">Language Options</p>
+        <p className="font-semibold text-lg dark:text-main-dark-text">Language Options</p>
         <div className="mt-4 flex gap-3">
           <Button
             placeholder={""}
             type="button"
             fullWidth
             variant="outlined"
+            className="dark:text-main-dark-text dark:border-gray-400"
             onClick={() => {
               setLanguages("Thai");
               sessionStorage.setItem("languages", JSON.stringify("Thai"));

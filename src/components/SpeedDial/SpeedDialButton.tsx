@@ -6,7 +6,7 @@ import {
   SpeedDialAction,
   Typography,
 } from "@material-tailwind/react";
-import { PlusIcon, HomeIcon, CogIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, CogIcon } from "@heroicons/react/24/outline";
 import { useStateDispatchContext } from "../../hooks/useStateDispatchHook";
 import { memo } from "react";
 
@@ -20,7 +20,7 @@ const SpeedDialButton = memo(() => {
             <IconButton
               placeholder=""
               size="lg"
-              className={`rounded-full`}
+              className={`rounded-full border-2`}
               style={{ backgroundColor: currentColor }}
             >
               <PlusIcon className="h-5 w-5 transition-transform group-hover:rotate-45" />
@@ -29,22 +29,7 @@ const SpeedDialButton = memo(() => {
           <SpeedDialContent placeholder="">
             <SpeedDialAction
               placeholder=""
-              className={`relative text-white dark:border-0`}
-              style={{ backgroundColor: currentColor }}
-            >
-              <HomeIcon className="h-5 w-5" />
-              <Typography
-                placeholder=""
-                variant="small"
-                color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
-              >
-                Home
-              </Typography>
-            </SpeedDialAction>
-            <SpeedDialAction
-              placeholder=""
-              className={`relative text-white dark:border-0`}
+              className={`relative text-white border-2`}
               onClick={() => setIsSettings(true)}
               style={{ backgroundColor: currentColor }}
             >
@@ -53,24 +38,9 @@ const SpeedDialButton = memo(() => {
                 placeholder=""
                 variant="small"
                 color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
+                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-800 dark:text-main-dark-text"
               >
                 Settings
-              </Typography>
-            </SpeedDialAction>
-            <SpeedDialAction
-              placeholder=""
-              className={`relative text-white dark:border-0`}
-              style={{ backgroundColor: currentColor }}
-            >
-              <Square3Stack3DIcon className="h-5 w-5" />
-              <Typography
-                placeholder=""
-                variant="small"
-                color="blue-gray"
-                className="absolute top-2/4 -left-2/4 -translate-y-2/4 -translate-x-3/4 font-semibold text-gray-500 dark:text-main-dark-text"
-              >
-                Pages
               </Typography>
             </SpeedDialAction>
           </SpeedDialContent>

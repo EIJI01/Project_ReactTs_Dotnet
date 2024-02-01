@@ -1,5 +1,11 @@
+import ReservationQueue from "../../components/ComponentPage/Customer/ReservationQueue";
+
 const BookingQueue = (): JSX.Element => {
-  return <div>Booking Queue</div>;
+  return (
+    <div>
+      <ReservationQueue />
+    </div>
+  );
 };
 
 export default BookingQueue;

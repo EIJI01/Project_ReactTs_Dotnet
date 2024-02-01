@@ -1,5 +1,5 @@
 const CallingGM = (): JSX.Element => {
-  return <div>CallingGM</div>;
+  return <div>Calling gm</div>;
 };
 
 export default CallingGM;
